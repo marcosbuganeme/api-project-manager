@@ -26,6 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.3",
     "nodemailer": "^6.3.0",
+    "nodemailer-express-handlebars": "^3.1.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
