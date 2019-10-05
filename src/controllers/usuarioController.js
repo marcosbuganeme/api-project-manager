@@ -1,6 +1,6 @@
 const express = require('express')
-
 const authMiddleware = require('../middleware/auth')
+
 const UsuarioRepository = require('../repositories/usuarios.model')
 const JwtGenerateToken = require('../components/jwtGeneratorToken')
 

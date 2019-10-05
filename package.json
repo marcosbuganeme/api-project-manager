@@ -1,17 +1,19 @@
 {
-  "name": "etl-winthor",
+  "name": "api-nodejs",
   "version": "1.0.0",
-  "description": "etl de integraçao de dados do winthor",
+  "description": "api nodejs com autenticação em algumas rotas de micro serviços disponibilizadas",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "integraçao",
-    "etl",
+    "autenticação",
+    "jwt",
+    "express",
+    "jsonwebtoken",
+    "micro serviços",
     "nodejs",
-    "mongo",
     "mongoose"
   ],
   "author": "marcos olavo",
