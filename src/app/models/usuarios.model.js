@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 
-const mongoose = require('../config/banco-dados/index')
+const mongoose = require('../../config/banco-dados/mongodb-config')
 
 const mongo = mongoose.module
 

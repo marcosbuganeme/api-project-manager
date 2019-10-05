@@ -1,7 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcryptjs')
 
-const UsuarioRepository = require('../repositories/usuarios.model')
+const UsuarioRepository = require('../models/usuarios.model')
 const JwtGenerateToken = require('../components/jwtGeneratorToken')
 
 const router = express.Router()

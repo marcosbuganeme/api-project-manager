@@ -1,7 +1,7 @@
 const express = require('express')
-const authMiddleware = require('../middleware/auth')
 
-const UsuarioRepository = require('../repositories/usuarios.model')
+const UsuarioRepository = require('../models/usuarios.model')
+const authMiddleware = require('../middleware/auth.middleware')
 const JwtGenerateToken = require('../components/jwtGeneratorToken')
 
 const router = express.Router()
