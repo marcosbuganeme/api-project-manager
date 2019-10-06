@@ -108,4 +108,57 @@ router.post('/esqueci-minha-senha', async (req, res) => {
     }
 })
 
+router.post('/resetar-senha', async (req, res) => {
+    const { email, senha, token } = req.body
+
+    try {
+        
+        const usuario = await UsuarioRepository.findOne({ email }).select('+tokenParaResetarSenha dataExpiracaoResetarSenha')
+        if (!usuario) {
+            return res.status(400).send({
+                error: {
+                    resume: 'Erro no registro',
+                    detail: 'Informe todos os dados obrigatório antes de salvar um usuário'
+                }
+           })
+        }
+
+        if (token !== usuario.tokenParaResetarSenha) {
+
+            return res.status(400).send({
+                error: {
+                    resume: 'Token informado é inválido',
+                    detail: 'Token enviado na requisição está inválido, revise o token informado para ver se ele não está expirado'
+                }
+           })
+        }
+
+        const dataAtual = new Date
+        if (dataAtual > usuario.dataExpiracaoResetarSenha) {
+
+            return res.status(400).send({
+                error: {
+                    resume: 'Token expirou',
+                    detail: 'Token expirou, por favor gere um novo token'
+                }
+            })
+        }
+
+        usuario.senha = senha
+
+        await UsuarioRepository.save()
+
+        res.send('Parabéns, sua senha foi resetada.')
+
+    } catch (error) {
+
+        return res.status(400).send({
+            error: {
+                resume: 'Usuário não encontrado',
+                detail: `E-mail [${email}] cadastrado não existe`
+            }
+        })
+    }
+})
+
 module.exports = app => app.use('/usuarios', router)
