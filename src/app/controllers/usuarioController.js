@@ -117,8 +117,8 @@ router.post('/resetar-senha', async (req, res) => {
         if (!usuario) {
             return res.status(400).send({
                 error: {
-                    resume: 'Erro no registro',
-                    detail: 'Informe todos os dados obrigatório antes de salvar um usuário'
+                    resume: 'Usuário não encontrado',
+                    detail: `E-mail [${email}] cadastrado não existe`
                 }
            })
         }
@@ -146,7 +146,7 @@ router.post('/resetar-senha', async (req, res) => {
 
         usuario.senha = senha
 
-        await UsuarioRepository.save()
+        await usuario.save()
 
         res.send('Parabéns, sua senha foi resetada.')
 
@@ -154,8 +154,7 @@ router.post('/resetar-senha', async (req, res) => {
 
         return res.status(400).send({
             error: {
-                resume: 'Usuário não encontrado',
-                detail: `E-mail [${email}] cadastrado não existe`
+                detail: `${error}`
             }
         })
     }
