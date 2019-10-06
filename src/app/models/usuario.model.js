@@ -16,6 +16,11 @@ const UsuarioSchema = new mongo.Schema({
         required: true,
         select: false
     },
+    administrador: {
+        type: Boolean,
+        default: false,
+        select: false
+    },
     tokenParaResetarSenha: {
         type: String,
         select: false
@@ -38,6 +43,6 @@ UsuarioSchema.pre('save', async function(next) {
     return next()
 })
 
-const UsuarioRepository = mongo.model('usuarios', UsuarioSchema)
+const UsuarioRepositoryeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOThlODBmMGI5ZDg5MGIwZjk3Yjc0NCIsImlhdCI6MTU3MDM5MzY2NSwiZXhwIjoxNTcwNDgwMDY1fQ.hsXnK7bkPHP0Bg7yukj2B1pKE8UET4vBHFrQWbPTmxg = mongo.model('Usuario', UsuarioSchema)
 
 module.exports = UsuarioRepository

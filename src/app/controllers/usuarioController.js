@@ -1,7 +1,7 @@
 const express = require('express')
 const crypto = require('crypto')
 
-const UsuarioRepository = require('../models/usuarios.model')
+const UsuarioRepository = require('../models/usuario.model')
 const authMiddleware = require('../middleware/auth.middleware')
 const mailer = require('../../config/enviar-email/mailer')
 const JwtGenerateToken = require('../components/jwtGeneratorToken')
@@ -33,7 +33,7 @@ router.post('/cadastrar', async (req, res) => {
         const usuario = await UsuarioRepository.create(req.body)
         usuario.senha = undefined
 
-        return res.send({ 
+        return res.send({
             usuario, 
             token: JwtGenerateToken({ id: usuario.id }) 
         })
@@ -53,7 +53,7 @@ router.post('/esqueci-minha-senha', async (req, res) => {
     const { email } = req.body
 
     try {
-        
+
         const usuario = await UsuarioRepository.findOne({ email })
 
         if (!usuario) {
