@@ -16,6 +16,14 @@ const UsuarioSchema = new mongo.Schema({
         required: true,
         select: false
     },
+    tokenParaResetarSenha: {
+        type: String,
+        select: false
+    },
+    dataExpiracaoResetarSenha: {
+        type: Date,
+        select: false
+    },
     dataCriacao: { 
         type: Date, 
         required: true,
