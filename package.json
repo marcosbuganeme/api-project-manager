@@ -4,9 +4,20 @@
   "description": "api nodejs com autenticação em algumas rotas de micro serviços disponibilizadas",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/index.js",
+    "dev": "nodemon src/server.ts",
+    "prebuild": "rimraf dist",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.16"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
   "keywords": [
     "autenticação",
     "jwt",
@@ -27,9 +38,30 @@
     "mongoose": "^5.7.3",
     "nodemailer": "^6.3.0",
     "nodemailer-express-handlebars": "^3.1.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pino": "^5.13.4"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "@types/chalk": "^2.2.0",
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.1",
+    "@types/figlet": "^1.2.0",
+    "@types/helmet": "0.0.44",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "pino-pretty": "^3.2.2",
+    "prettier": "^1.18.2",
+    "sucrase": "^3.10.1",
+    "typescript": "^3.6.4"
   }
 }

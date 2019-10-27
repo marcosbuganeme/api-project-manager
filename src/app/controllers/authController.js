@@ -8,7 +8,10 @@ const router = express.Router()
 
 router.post('/usuario', async (req, res) => {
 
-    const { email, senha } = req.body
+    const { email, senha, tarefas } = req.body
+
+    tarefas.forEach(tarefa => console.log)(tarefa.titulo);
+
     const usuario = await UsuarioRepository.findOne({ email }).select('+senha')
 
     if (!usuario) {
