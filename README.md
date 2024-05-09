@@ -1,5 +1,5 @@
 
-# Nome do Projeto
+# API NODEJS
 
 Descrição breve do projeto: Uma plataforma de gerenciamento de projetos que permite aos usuários colaborar em projetos, compartilhar documentos, gerenciar tarefas e acompanhar o progresso em tempo real.
 
@@ -23,7 +23,7 @@ Descrição breve do projeto: Uma plataforma de gerenciamento de projetos que pe
 
 ```bash
 # clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/marcosbuganeme/api-nodejs.git
 cd seu-repositorio
 
 # instale as dependências
@@ -38,7 +38,7 @@ npm start
 Descreva brevemente a estrutura de arquivos mais importante do seu projeto para ajudar novos contribuidores a entender melhor como o projeto é organizado.
 
 ```
-/nome-do-projeto
+/api-nodejs
     /node_modules
     /src
         /api
@@ -66,6 +66,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ## Contato
 
-- Nome: Seu Nome
-- Email: seu-email@example.com
-- Projeto Link: https://github.com/seu-usuario/seu-repositorio
+- Nome: Marcos Buganeme
+- Email: molavosbdeveloper@gmail.com
+- Projeto Link: https://github.com/marcosbuganeme/api-nodejs
